@@ -1,13 +1,19 @@
-import readline from 'readline'
-import chalk from "chalk";
+import readline from 'readline'  // Importamos el módulo readline para manejar la entrada y salida de la consola
+import chalk from "chalk";       // Importamos el módulo chalk para dar color a los textos en la consola
 
-const leer = readline.createInterface({
+
+const leer = readline.createInterface({  // Creamos una interfaz de lectura y escritura en la consola
     input: process.stdin,
     output: process.stdout
 })
 
+
+// Importamos las funciones necesarias desde el archivo gestionar.js
 import {AgregarTarea, ListaTareas, CompletarTarea, EliminarTarea, ResumenTareas} from "./gestionar.js";
 
+
+
+//FUNCION PRINCIPAL DEL PROGRAMA, DONDE SE MUESTRA EL MENU Y SE MANEJAN LAS OPCIONES DEL USUARIO
 export function MenuPrincipal() {
     console.clear();
     console.log(chalk.yellowBright("\n\n--------------------"));
@@ -22,6 +28,8 @@ export function MenuPrincipal() {
 
   leer.question(chalk.blue('Ingrese una opcion: '), opcion => {
         switch (opcion) {
+
+    
             case '1':
                 console.clear();
                 console.log(chalk.yellowBright("\n\n------------------------"));
@@ -50,6 +58,8 @@ export function MenuPrincipal() {
                     })
                 })
             break;
+
+
           case '2':
             console.clear();
                 console.log(chalk.yellowBright("\n\n--------------------"));
@@ -72,6 +82,8 @@ export function MenuPrincipal() {
               }
             })
             break;
+
+
             case '3':
                 console.clear();
                 console.log(chalk.yellowBright("\n\n--------------------"));
@@ -99,6 +111,7 @@ export function MenuPrincipal() {
 
             break;
 
+            
             case '4':
                 console.clear();
                 console.log(chalk.yellowBright("\n\n--------------------"));
